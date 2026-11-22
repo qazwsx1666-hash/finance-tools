@@ -100,8 +100,15 @@
       setText('lblSalaryAmount', segState.salaryMode === 'annual' ? '연봉' : '월급');
     }
     if (key === 'convMode') {
-      setText('lblConvAmount', segState.convMode === 'd2m' ? '전환할 보증금' : '전환할 월세');
-      setText('outConvLabel', segState.convMode === 'd2m' ? '늘어나는 월세' : '늘어나는 보증금');
+      var d2m = segState.convMode === 'd2m';
+      setText('lblConvAmount', d2m ? '전환할 보증금' : '전환할 월세');
+      setText('outConvLabel', d2m ? '늘어나는 월세' : '늘어나는 보증금');
+      var amtEl = safe('inConvAmount');
+      if (amtEl) {
+        var v = money(amtEl.value);
+        if (!d2m && v > 1000000) { amtEl.value = '200,000'; }
+        if (d2m && v < 1000000) { amtEl.value = '50,000,000'; }
+      }
     }
   }
 
@@ -854,9 +861,16 @@
 
     var note = safe('outConvNote');
     if (note) {
+      var over = 0;
+      if (mode === 'd2m' && amt > dep) over = 1;
+      if (mode === 'm2d' && amt > mon) over = 2;
       note.className = 'notice ' + (ratePct > limitPct ? 'warn' : 'info');
-      note.innerHTML = '법정 전환율 상한은 한국은행 기준금리(' + pctFixed(basePct) + ') + 2.0%p = <b>연 ' + pctFixed(limitPct) +
+      var base = '법정 전환율 상한은 한국은행 기준금리(' + pctFixed(basePct) + ') + 2.0%p = <b>연 ' + pctFixed(limitPct) +
         '</b>입니다(주택임대차보호법 제7조의2). 상한을 넘는 부분은 효력이 없으며, 이미 지급했다면 반환을 청구할 수 있습니다.';
+      var warn = over === 1
+        ? ' 전환할 보증금이 현재 보증금보다 큽니다. 금액을 확인해 주세요.'
+        : (over === 2 ? ' 전환할 월세가 현재 월세보다 큽니다. 금액을 확인해 주세요.' : '');
+      note.innerHTML = base + (warn ? ' <b>' + warn.trim() + '</b>' : '');
     }
   }
 

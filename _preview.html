@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>모바일 미리보기</title>
+<style>
+  body{margin:0;padding:20px;background:#e9edf2;font:12px/1.4 -apple-system,sans-serif;color:#4e5968}
+  .row{display:flex;gap:20px;align-items:flex-start}
+  iframe{border:0;border-radius:20px;background:#fff;box-shadow:0 8px 30px rgba(25,31,40,.18)}
+  p{margin:0 0 10px}
+</style></head>
+<body>
+<p>390 × 844 (모바일 뷰포트) 미리보기</p>
+<div class="row">
+  <iframe id="a" src="./index.html" width="390" height="844"></iframe>
+</div>
+<script>
+  var tab = new URLSearchParams(location.search).get('tab');
+  if (tab) document.getElementById('a').src = './index.html#' + tab;
+</script>
+</body></html>
