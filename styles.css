@@ -683,12 +683,11 @@ td .tag {
 
 /* ---------- 알림/경고 ---------- */
 .notice {
-  display: flex;
-  gap: 9px;
-  align-items: flex-start;
+  position: relative;
+  display: block;
   font-size: 12.5px;
-  line-height: 1.55;
-  padding: 12px 13px;
+  line-height: 1.8;
+  padding: 12px 14px 12px 40px;
   border-radius: 12px;
   background: #f7f8fa;
   color: var(--ink-2);
@@ -700,7 +699,9 @@ td .tag {
 .notice.good { background: var(--green-weak); color: #0b6b40; }
 .notice::before {
   content: "";
-  flex: 0 0 auto;
+  position: absolute;
+  left: 13px;
+  top: 13px;
   width: 18px;
   height: 18px;
   border-radius: 50%;
