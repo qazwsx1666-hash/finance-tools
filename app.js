@@ -36,18 +36,26 @@
     var x = Number(n) || 0;
     var neg = x < 0;
     var a = Math.abs(Math.round(x));
-    var s;
-    if (a === 0) s = '0 원';
-    else if (a >= 100000000) {
+    var s = '';
+    var approx = false;
+    if (a === 0) return '0 원';
+    if (a >= 100000000) {
       var eok = Math.floor(a / 100000000);
       var man = Math.floor((a % 100000000) / 10000);
       s = eok + '억' + (man > 0 ? ' ' + fmt(man) + '만' : '') + ' 원';
+      approx = (a % 10000) !== 0;
     } else if (a >= 10000) {
-      s = fmt(Math.round(a / 10000)) + '만 원';
+      var manR = Math.round(a / 10000);
+      s = fmt(manR) + '만 원';
+      approx = Math.abs(manR * 10000 - a) >= 1;
     } else {
       s = fmt(a) + ' 원';
     }
-    return (neg ? '-' : '') + s;
+    return (neg ? '-' : '') + (approx ? '약 ' : '') + s;
+  }
+  function pctFixed(n, digits) {
+    var d = typeof digits === 'number' ? digits : 1;
+    return (Number(n) || 0).toFixed(d) + '%';
   }
   function setText(id, text) {
     var el = document.getElementById(id);
@@ -376,10 +384,10 @@
     }
 
     var rows = [
-      ['국민연금', R.pension * 100 + '%', pension, '기준소득월액 ' + won(pensionBase)],
-      ['건강보험', R.health * 100 + '%', health, ''],
-      ['장기요양보험', '건보의 ' + (R.ltc * 100) + '%', ltc, ''],
-      ['고용보험', R.emp * 100 + '%', emp, '실업급여분'],
+      ['국민연금', pct(R.pension * 100), pension, '기준소득월액 ' + won(pensionBase)],
+      ['건강보험', pct(R.health * 100), health, ''],
+      ['장기요양보험', '건보의 ' + pct(R.ltc * 100), ltc, ''],
+      ['고용보험', pct(R.emp * 100), emp, '실업급여분'],
       ['소득세', '간이세액 근사', monthlyTax, '연 ' + won(annualTax) + ' ÷ 12'],
       ['지방소득세', '소득세의 10%', local, '']
     ];
@@ -461,7 +469,7 @@
     var sub = safe('outLoanMonthDiffRead');
     if (sub) {
       sub.textContent = payOld - payNew > 0
-        ? '매달 ' + won(payOld - payNew) + '씩 덜 냅니다 (' + readWon(payOld - payNew) + ')'
+        ? '매달 ' + won(payOld - payNew) + '씩 덜 냅니다 · 연 ' + won((payOld - payNew) * 12)
         : '갈아타도 월 납입금은 줄지 않습니다';
     }
     setText('outLoanPayOld', won(payOld));
@@ -654,7 +662,7 @@
     var total = daily * days;
 
     setText('outUnempDaily', won(daily));
-    setText('outUnempDailyRead', readWon(daily) + (band === '상한액 적용' ? ' · 상한' : (band === '하한액 적용' ? ' · 하한' : '')));
+    setText('outUnempDailyRead', band);
     setText('outUnempDays', days + '일');
     setText('outUnempTotal', won(total));
 
@@ -811,13 +819,13 @@
     }
 
     setText('outConvValue', won(delta));
-    setText('outConvValueRead', readWon(delta) + ' · 연 ' + pct(ratePct) + ' 적용');
+    setText('outConvValueRead', readWon(delta) + ' · 연 ' + pctFixed(ratePct) + ' 적용');
     setText('outConvDeposit', won(newDep));
     setText('outConvMonthly', won(newMon));
 
     var hint = safe('hintConvLimit');
     if (hint) {
-      hint.textContent = '기준금리 ' + pct(basePct) + ' + 2%p = 법정 상한 연 ' + pct(limitPct);
+      hint.textContent = '기준금리 ' + pctFixed(basePct) + ' + 2%p = 법정 상한 연 ' + pctFixed(limitPct);
     }
 
     /* 100만원당 월세 & 상한 기준 */
@@ -826,9 +834,9 @@
     var atLimit = amt * limit / 12;
 
     var rows = [
-      ['입력 전환율', pct(ratePct), '보증금 100만 원당 ' + won(per100)],
-      ['법정 상한 (기준금리+2%p)', pct(limitPct), '보증금 100만 원당 ' + won(per100Limit)],
-      ['상한으로 전환할 때', pct(limitPct), mode === 'd2m' ? '월세 ' + won(atLimit) : '보증금 ' + won(rate > 0 ? amt * 12 / limit : 0)]
+      ['입력 전환율', pctFixed(ratePct), '보증금 100만 원당 ' + won(per100)],
+      ['법정 상한 (기준금리+2%p)', pctFixed(limitPct), '보증금 100만 원당 ' + won(per100Limit)],
+      ['상한으로 전환할 때', pctFixed(limitPct), mode === 'd2m' ? '월세 ' + won(atLimit) : '보증금 ' + won(rate > 0 ? amt * 12 / limit : 0)]
     ];
     setHTML('outConvRows', rows.map(function (r) {
       return '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td><td>' + r[2] + '</td></tr>';
@@ -837,17 +845,17 @@
     var verdict = safe('outConvVerdict');
     if (verdict) {
       if (ratePct > limitPct + 0.0001) {
-        verdict.innerHTML = '<span class="badge bad"><span class="dot"></span>법정 상한 초과 · ' + pct(ratePct) + ' > ' + pct(limitPct) + '</span>' +
+        verdict.innerHTML = '<span class="badge bad"><span class="dot"></span>법정 상한 초과 · ' + pctFixed(ratePct) + ' > ' + pctFixed(limitPct) + '</span>' +
           (mode === 'd2m' ? '<span class="badge warn"><span class="dot"></span>초과분 ' + won(amt * (rate - limit) / 12) + '/월 무효</span>' : '');
       } else {
-        verdict.innerHTML = '<span class="badge good"><span class="dot"></span>법정 상한 이내 · ' + pct(ratePct) + ' ≤ ' + pct(limitPct) + '</span>';
+        verdict.innerHTML = '<span class="badge good"><span class="dot"></span>법정 상한 이내 · ' + pctFixed(ratePct) + ' ≤ ' + pctFixed(limitPct) + '</span>';
       }
     }
 
     var note = safe('outConvNote');
     if (note) {
       note.className = 'notice ' + (ratePct > limitPct ? 'warn' : 'info');
-      note.innerHTML = '법정 전환율 상한은 한국은행 기준금리(' + pct(basePct) + ') + 2.0%p = <b>연 ' + pct(limitPct) +
+      note.innerHTML = '법정 전환율 상한은 한국은행 기준금리(' + pctFixed(basePct) + ') + 2.0%p = <b>연 ' + pctFixed(limitPct) +
         '</b>입니다(주택임대차보호법 제7조의2). 상한을 넘는 부분은 효력이 없으며, 이미 지급했다면 반환을 청구할 수 있습니다.';
     }
   }
