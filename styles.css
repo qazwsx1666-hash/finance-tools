@@ -872,8 +872,12 @@ details.faq .a strong { color: var(--ink); }
    계산기 전용 페이지 (전용 URL) — 내비게이션·소개·가이드 본문
    ========================================================================== */
 .calc-nav {
-  background: #fff;
+  position: sticky;
+  top: 60px;
+  z-index: 30;
+  background: var(--bg);
   border-bottom: 1px solid var(--line);
+  box-shadow: 0 6px 12px -10px rgba(25, 31, 40, 0.35);
 }
 .calc-nav-inner {
   display: flex;
@@ -886,18 +890,37 @@ details.faq .a strong { color: var(--ink); }
 .calc-nav-inner::-webkit-scrollbar { display: none; }
 .calc-nav a {
   flex: 0 0 auto;
-  font-size: 12.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13.5px;
   font-weight: 700;
   color: var(--ink-2);
-  background: #f2f4f6;
+  background: #fff;
+  border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 7px 12px;
+  padding: 9px 15px;
   white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(25, 31, 40, 0.04);
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
 }
-.calc-nav a:hover { background: #e8ebee; color: var(--ink); text-decoration: none; }
-.calc-nav a[aria-current="page"] { background: var(--blue); color: #fff; }
+.calc-nav a:hover {
+  background: #f1f5fb;
+  border-color: #cfe0f7;
+  color: var(--blue-dark);
+  text-decoration: none;
+}
+.calc-nav a:active { transform: scale(0.97); }
+.calc-nav a[aria-current="page"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(25, 31, 40, 0.18);
+}
+.calc-nav a[aria-current="page"]:hover { background: var(--ink); color: #fff; }
 
-.intro { padding: 24px 0 16px; }
+.intro { padding: 22px 0 16px; }
 .crumb {
   display: flex;
   flex-wrap: wrap;
@@ -937,9 +960,11 @@ details.faq .a strong { color: var(--ink); }
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.45;
+  margin-top: 24px;
   padding-top: 22px;
+  border-top: 1px solid var(--line-2);
 }
-.guide h2:first-child { padding-top: 2px; }
+.guide h2:first-child { margin-top: 2px; padding-top: 2px; border-top: 0; }
 .guide h3 {
   font-size: 15px;
   font-weight: 800;
@@ -975,16 +1000,41 @@ details.faq .a strong { color: var(--ink); }
 .related strong { display: block; font-size: 14px; font-weight: 800; color: var(--ink); }
 .related span { display: block; margin-top: 4px; font-size: 12.5px; color: var(--ink-3); line-height: 1.55; }
 
-.calc-cards { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 10px; }
+.calc-cards { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 10px; counter-reset: calccard; }
 .calc-cards li { margin: 0; }
 .calc-cards a {
+  position: relative;
   display: block;
   border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 14px 16px;
+  border-radius: 16px;
+  padding: 14px 16px 14px 52px;
   background: #fff;
+  box-shadow: 0 1px 2px rgba(25, 31, 40, 0.03);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
-.calc-cards a:hover { border-color: var(--blue); text-decoration: none; }
+.calc-cards a::before {
+  counter-increment: calccard;
+  content: counter(calccard, decimal-leading-zero);
+  position: absolute;
+  left: 14px;
+  top: 15px;
+  width: 26px;
+  height: 26px;
+  border-radius: 9px;
+  background: var(--blue-weak);
+  color: var(--blue-dark);
+  font-size: 11px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  display: grid;
+  place-items: center;
+}
+.calc-cards a:hover {
+  border-color: #a8cdf9;
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
 .calc-cards strong { display: block; font-size: 14.5px; font-weight: 800; color: var(--ink); }
 .calc-cards span { display: block; margin-top: 4px; font-size: 12.5px; color: var(--ink-3); line-height: 1.55; }
 
