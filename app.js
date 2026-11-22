@@ -57,6 +57,11 @@
     var d = typeof digits === 'number' ? digits : 1;
     return (Number(n) || 0).toFixed(d) + '%';
   }
+  /* 요율 표기: 4.75 / 3.595 / 13.14 / 0.9 처럼 유효 숫자를 그대로 */
+  function rateLabel(v) {
+    var n = Math.round((Number(v) || 0) * 1000) / 1000;
+    return n + '%';
+  }
   function setText(id, text) {
     var el = document.getElementById(id);
     if (el) el.textContent = text;
@@ -391,10 +396,10 @@
     }
 
     var rows = [
-      ['국민연금', pct(R.pension * 100), pension, '기준소득월액 ' + won(pensionBase)],
-      ['건강보험', pct(R.health * 100), health, ''],
-      ['장기요양보험', '건보의 ' + pct(R.ltc * 100), ltc, ''],
-      ['고용보험', pct(R.emp * 100), emp, '실업급여분'],
+      ['국민연금', rateLabel(R.pension * 100), pension, '기준소득월액 ' + won(pensionBase)],
+      ['건강보험', rateLabel(R.health * 100), health, ''],
+      ['장기요양보험', '건보의 ' + rateLabel(R.ltc * 100), ltc, ''],
+      ['고용보험', rateLabel(R.emp * 100), emp, '실업급여분'],
       ['소득세', '간이세액 근사', monthlyTax, '연 ' + won(annualTax) + ' ÷ 12'],
       ['지방소득세', '소득세의 10%', local, '']
     ];

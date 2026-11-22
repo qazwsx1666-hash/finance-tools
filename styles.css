@@ -700,20 +700,24 @@ td .tag {
 .notice.bad { background: var(--red-weak); color: #a6232e; }
 .notice.good { background: var(--green-weak); color: #0b6b40; }
 .notice::before {
-  content: "!";
+  content: "";
   flex: 0 0 auto;
-  display: grid;
-  place-items: center;
-  width: 18px; height: 18px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background: currentColor;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 900;
+  background-color: currentColor;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 11px 11px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M6 2.2v4.6' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='6' cy='9.5' r='1.1' fill='%23fff'/%3E%3C/svg%3E");
   margin-top: 1px;
 }
-.notice.good::before { content: "✓"; }
-.notice.info::before { content: "i"; }
+.notice.good::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.4 6.3l2.4 2.4 4.8-5.2' stroke='%23fff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.notice.info::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Ccircle cx='6' cy='2.9' r='1.1' fill='%23fff'/%3E%3Cpath d='M6 5.3v4.4' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
 .notice:empty { display: none; }
 
 /* ---------- FAQ / 팁 ---------- */
