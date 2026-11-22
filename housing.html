@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>청약 가점 계산기 | 84점 만점 배점표와 전월세 전환율</title>
+<meta name="description" content="무주택기간 32점·부양가족 35점·청약통장 17점으로 84점 만점 청약 가점을 계산하고, 법정 상한(기준금리+2%p)을 적용한 전월세 전환율과 월세를 확인하세요.">
+<meta name="keywords" content="청약 가점 계산기, 청약 84점, 무주택기간 점수, 부양가족 가점, 청약통장 가입기간, 전월세 전환율 계산, 법정 전환율 상한, 월세 세액공제">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="계산기 허브">
+<meta name="theme-color" content="#3182f6">
+<meta name="google-adsense-account" content="ca-pub-6515548213411698">
+<link rel="canonical" href="https://qazwsx1666-hash.github.io/finance-tools/housing.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="계산기 허브">
+<meta property="og:title" content="청약 가점 계산기 | 84점 만점 배점표와 전월세 전환율">
+<meta property="og:description" content="무주택기간 32점·부양가족 35점·청약통장 17점으로 84점 만점 청약 가점을 계산하고, 법정 상한(기준금리+2%p)을 적용한 전월세 전환율과 월세를 확인하세요.">
+<meta property="og:url" content="https://qazwsx1666-hash.github.io/finance-tools/housing.html">
+<meta property="og:image" content="https://qazwsx1666-hash.github.io/finance-tools/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="청약 가점 계산기 | 84점 만점 배점표와 전월세 전환율">
+<meta name="twitter:description" content="무주택기간 32점·부양가족 35점·청약통장 17점으로 84점 만점 청약 가점을 계산하고, 법정 상한(기준금리+2%p)을 적용한 전월세 전환율과 월세를 확인하세요.">
+<meta name="twitter:image" content="https://qazwsx1666-hash.github.io/finance-tools/og-image.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233182f6'/%3E%3Ctext x='32' y='45' font-size='34' font-family='-apple-system,sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3E%E2%82%A9%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="./styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "청약 가점·전월세 전환율 계산기",
+  "url": "https://qazwsx1666-hash.github.io/finance-tools/housing.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "inLanguage": "ko-KR",
+  "description": "무주택기간 32점·부양가족 35점·청약통장 17점으로 84점 만점 청약 가점을 계산하고, 법정 상한(기준금리+2%p)을 적용한 전월세 전환율과 월세를 확인하세요.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "계산기 허브",
+    "url": "https://qazwsx1666-hash.github.io/finance-tools/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "청약 가점 84점은 어떻게 구성되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "민영주택 일반공급 가점제 기준으로 무주택기간 32점, 부양가족 수 35점, 청약통장 가입기간 17점을 합해 84점 만점입니다. 부양가족 배점이 가장 커서 가족 구성이 당락에 큰 영향을 미칩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "무주택 기간은 언제부터 계산하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "본인이 만 30세가 된 날(그 전에 혼인했다면 혼인신고일)부터 무주택으로 계속 지낸 기간입니다. 30세 이전 기간은 인정되지 않으므로 20대에 오래 무주택이었어도 가점에는 반영되지 않습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "부양가족은 누구까지 인정되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "신청자와 같은 주민등록등본에 등재되어 있고 신청자 또는 배우자와 3년 이상 같은 등본에 있었던 배우자·부모·자녀·형제자매 등입니다. 30세 이상이거나 연간 소득이 있는 경우 등은 인정되지 않을 수 있어 입주자모집공고 기준을 확인해야 합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "전월세 전환율 법정 상한은 얼마인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "주택임대차보호법 제7조의2에 따라 한국은행 기준금리 + 2.0%p입니다. 기준금리 3.00% 기준으로 상한은 연 5.0%이며, 기준금리가 바뀌면 상한도 함께 조정됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "상한을 넘는 전환율을 요구하면 어떻게 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "법정 상한을 초과하는 부분은 효력이 없습니다. 이미 지급했다면 초과분의 반환을 청구할 수 있고, 분쟁이 있으면 주택임대차분쟁조정위원회에 조정을 신청할 수 있습니다. 계약서와 지급 내역을 증빙으로 남겨 두세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "계약 갱신 때 월세를 얼마까지 올릴 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "계약갱신요구권을 행사하는 경우 임대료 증액은 5%를 넘을 수 없습니다. 전월세 전환율 상한(기준금리+2%p)과는 별개의 규정이므로, 갱신 계약과 신규 계약의 기준이 다르다는 점을 확인하세요."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "계산기 허브",
+      "item": "https://qazwsx1666-hash.github.io/finance-tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "청약·전월세",
+      "item": "https://qazwsx1666-hash.github.io/finance-tools/housing.html"
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="skip" href="#main">본문으로 바로가기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="./">
+      <span class="brand-mark" aria-hidden="true">₩</span>
+      <span class="brand-name">계산기 허브<small>생활·금융 계산기 5종</small></span>
+    </a>
+    <span class="header-note">현행 요율 반영</span>
+  </div>
+</header>
+
+  <nav class="calc-nav" aria-label="계산기 바로가기">
+    <div class="wrap calc-nav-inner">
+      <a href="./">전체 계산기</a>
+      <a href="./savings.html">예적금 이자</a>
+      <a href="./salary.html">실수령액</a>
+      <a href="./refinance.html">대출갈아타기</a>
+      <a href="./severance.html">퇴직금·실업급여</a>
+      <a href="./housing.html" aria-current="page">청약·전월세</a>
+    </div>
+  </nav>
+
+<main id="main">
+  <div class="wrap">
+
+    <div class="intro">
+      <nav class="crumb" aria-label="현재 위치">
+        <a href="./">계산기 허브</a><span aria-hidden="true">›</span><span>청약·전월세</span>
+      </nav>
+      <h1>청약 가점·전월세 전환율 계산기</h1>
+      <p class="lead">청약 당락은 84점 만점 가점표로 갈리고, 전월세 계약은 법정 전환율 상한으로 보호받습니다. 무주택기간·부양가족·통장기간을 넣어 내 가점을 확인하고, 보증금과 월세를 바꿀 때 실제 부담이 얼마인지 계산해 보세요.</p>
+      <p class="meta">현행 요율 기준 · 회원가입 없이 무료 · 입력한 값은 브라우저에서만 계산됩니다</p>
+    </div>
+
+    <section class="panel is-active" id="panel-housing" tabindex="-1">
+      <div class="card">
+        <div class="subtabs" role="tablist" aria-label="청약·전월세 계산기">
+          <button type="button" role="tab" aria-selected="true" aria-controls="sub-pt" id="stab-pt" data-sub="pt">청약 가점</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="sub-conv" id="stab-conv" data-sub="conv">전월세 전환율</button>
+        </div>
+
+        <!-- 청약 가점 -->
+        <div class="subpanel is-active" id="sub-pt" role="tabpanel" aria-labelledby="stab-pt">
+          <div class="card-head">
+            <div>
+              <h2>청약 가점 계산</h2>
+              <p>무주택기간·부양가족·통장기간을 넣으면 84점 만점 가점이 나옵니다.</p>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field span-2">
+              <label class="field-label" for="inPtNoHouse">무주택 기간 <span class="opt">만 30세 또는 혼인신고일부터</span></label>
+              <div class="input-box">
+                <input id="inPtNoHouse" inputmode="numeric" autocomplete="off" value="60">
+                <span class="unit">개월</span>
+              </div>
+              <div class="chips" data-chips="inPtNoHouse">
+                <button type="button" class="chip" data-value="12">1년</button>
+                <button type="button" class="chip" data-value="60">5년</button>
+                <button type="button" class="chip" data-value="120">10년</button>
+                <button type="button" class="chip" data-value="180">15년</button>
+              </div>
+            </div>
+            <div class="field">
+              <label class="field-label" for="selPtFamily">부양가족 수 <span class="opt">본인 제외</span></label>
+              <div class="input-box">
+                <select id="selPtFamily">
+                  <option value="0" selected>0명</option>
+                  <option value="1">1명</option>
+                  <option value="2">2명</option>
+                  <option value="3">3명</option>
+                  <option value="4">4명</option>
+                  <option value="5">5명</option>
+                  <option value="6">6명 이상</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label class="field-label" for="inPtAccount">청약통장 가입기간</label>
+              <div class="input-box">
+                <input id="inPtAccount" inputmode="numeric" autocomplete="off" value="72">
+                <span class="unit">개월</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="result mt-16" aria-live="polite">
+            <div class="res-label">청약 가점 합계</div>
+            <div class="res-value" id="outPtTotal">0 점</div>
+            <div class="res-sub" id="outPtGrade">84점 만점</div>
+            <div class="res-grid">
+              <div><span>무주택 기간</span><strong id="outPtA">0점</strong></div>
+              <div><span>부양가족</span><strong id="outPtB">0점</strong></div>
+            </div>
+          </div>
+
+          <div class="bars mt-16" id="outPtBars" aria-hidden="true"></div>
+
+          <div class="table-wrap mt-8">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">항목</th>
+                  <th scope="col">배점</th>
+                  <th scope="col">만점</th>
+                </tr>
+              </thead>
+              <tbody id="outPtRows"></tbody>
+            </table>
+          </div>
+          <p class="notice info" id="outPtNote"></p>
+        </div>
+
+        <!-- 전월세 전환율 -->
+        <div class="subpanel" id="sub-conv" role="tabpanel" aria-labelledby="stab-conv">
+          <div class="card-head">
+            <div>
+              <h2>전월세 전환율 계산기</h2>
+              <p>보증금 ↔ 월세 전환 금액과 법정 상한을 함께 확인합니다.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="field-label">전환 방향</span>
+            <div class="seg" data-seg="convMode">
+              <button type="button" data-value="d2m" aria-pressed="true">보증금 낮추기<small>보증금을 월세로</small></button>
+              <button type="button" data-value="m2d" aria-pressed="false">월세 낮추기<small>월세를 보증금으로</small></button>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label class="field-label" for="inConvDeposit">현재 보증금</label>
+              <div class="input-box">
+                <input id="inConvDeposit" class="js-money" inputmode="numeric" autocomplete="off" value="200,000,000">
+                <span class="unit">원</span>
+              </div>
+              <p class="hint" id="readConvDeposit">2억 원</p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="inConvMonthly">현재 월세</label>
+              <div class="input-box">
+                <input id="inConvMonthly" class="js-money" inputmode="numeric" autocomplete="off" value="400,000">
+                <span class="unit">원</span>
+              </div>
+              <p class="hint" id="readConvMonthly">40만 원</p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="inConvAmount"><span id="lblConvAmount">전환할 보증금</span></label>
+              <div class="input-box">
+                <input id="inConvAmount" class="js-money" inputmode="numeric" autocomplete="off" value="50,000,000">
+                <span class="unit">원</span>
+              </div>
+              <p class="hint" id="readConvAmount">5,000만 원</p>
+            </div>
+            <div class="field">
+              <label class="field-label" for="inConvRate">전환율 <span class="opt">연</span></label>
+              <div class="input-box">
+                <input id="inConvRate" inputmode="decimal" autocomplete="off" value="5.0">
+                <span class="unit">%</span>
+              </div>
+              <p class="hint plain" id="hintConvLimit">법정 상한 계산 중…</p>
+            </div>
+            <div class="field span-2">
+              <label class="field-label" for="inConvBase">한국은행 기준금리 <span class="opt">법정 상한 자동 계산</span></label>
+              <div class="input-box">
+                <input id="inConvBase" inputmode="decimal" autocomplete="off" value="3.00">
+                <span class="unit">%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="result mt-16" aria-live="polite">
+            <div class="res-label" id="outConvLabel">늘어나는 월세</div>
+            <div class="res-value" id="outConvValue">0 원</div>
+            <div class="res-sub" id="outConvValueRead">0 원</div>
+            <div class="res-grid">
+              <div><span>바뀐 보증금</span><strong id="outConvDeposit">0 원</strong></div>
+              <div><span>바뀐 월세</span><strong id="outConvMonthly">0 원</strong></div>
+            </div>
+          </div>
+
+          <div class="verdict" id="outConvVerdict"></div>
+
+          <div class="table-wrap mt-16">
+            <table>
+              <caption>법정 상한 기준 계산</caption>
+              <thead>
+                <tr>
+                  <th scope="col">기준</th>
+                  <th scope="col">전환율</th>
+                  <th scope="col">월세 환산</th>
+                </tr>
+              </thead>
+              <tbody id="outConvRows"></tbody>
+            </table>
+          </div>
+          <p class="notice info" id="outConvNote"></p>
+        </div>
+      </div>
+    </section>
+
+  <section class="card guide" aria-label="계산 기준과 활용 가이드">
+<h2>청약 가점 84점은 이렇게 나뉩니다</h2>
+<p>민영주택 일반공급 가점제는 <strong>무주택기간 32점 + 부양가족 수 35점 + 청약통장 가입기간 17점</strong>으로 84점 만점입니다. 세 항목 모두 오래되고 많을수록 점수가 높아지지만, 부양가족 배점이 가장 크기 때문에 가족 구성이 당락에 결정적인 영향을 미칩니다.</p>
+<div class="table-wrap">
+<table>
+<caption>청약 가점 84점 배점표 (민영주택 일반공급 기준)</caption>
+<thead><tr><th scope="col">무주택기간</th><th scope="col">점수</th><th scope="col">부양가족 수</th><th scope="col">점수</th><th scope="col">통장 가입기간</th><th scope="col">점수</th></tr></thead>
+<tbody>
+<tr><td>1년 미만</td><td>2점</td><td>0명</td><td>5점</td><td>6개월 미만</td><td>1점</td></tr>
+<tr><td>1년</td><td>4점</td><td>1명</td><td>10점</td><td>6개월~1년</td><td>2점</td></tr>
+<tr><td>3년</td><td>8점</td><td>2명</td><td>15점</td><td>1년</td><td>3점</td></tr>
+<tr><td>5년</td><td>12점</td><td>3명</td><td>20점</td><td>3년</td><td>5점</td></tr>
+<tr><td>10년</td><td>22점</td><td>4명</td><td>25점</td><td>5년</td><td>7점</td></tr>
+<tr><td>15년 이상</td><td>32점</td><td>5명</td><td>30점</td><td>10년</td><td>12점</td></tr>
+<tr><td>—</td><td>—</td><td>6명 이상</td><td>35점</td><td>15년 이상</td><td>17점</td></tr>
+</tbody>
+</table>
+</div>
+<p>무주택기간은 만 30세가 된 날(그 전에 혼인했다면 혼인신고일)부터 무주택으로 지낸 기간으로 계산하고, 15년 이상이면 만점입니다. 부양가족은 신청자와 같은 주민등록등본에 등재되어 있고 3년 이상 같은 등본에 있었던 배우자·부모·자녀 등이 인정되며, 30세 이상이거나 소득이 있는 경우는 제외될 수 있습니다. 통장 가입기간은 해지하면 초기화되므로 주의해야 합니다.</p>
+
+<h2>가점 예시 — 같은 무주택자도 14점에서 64점까지</h2>
+<div class="table-wrap">
+<table>
+<caption>조건별 가점 계산 결과</caption>
+<thead><tr><th scope="col">사례</th><th scope="col">무주택</th><th scope="col">부양가족</th><th scope="col">통장</th><th scope="col">합계</th><th scope="col">해석</th></tr></thead>
+<tbody>
+<tr><td>A</td><td>2년</td><td>0명</td><td>1년</td><td>14점</td><td>하위권 · 추첨제·특별공급 검토</td></tr>
+<tr><td>B</td><td>5년</td><td>1명</td><td>3년</td><td>27점</td><td>하위권 · 지역 선별 필요</td></tr>
+<tr><td>C</td><td>10년</td><td>2명</td><td>5년</td><td>44점</td><td>중위권 · 지방 중소도시 도전</td></tr>
+<tr><td>D</td><td>15년</td><td>3명</td><td>10년</td><td>64점</td><td>중상위권 · 수도권 외곽 가능</td></tr>
+</tbody>
+</table>
+</div>
+<p class="table-note">최근 수도권 인기 단지는 60~70점대에서 당락이 갈리는 경우가 많고, 지방 중소도시는 40점대에서도 당첨 사례가 나옵니다. 매년·단지별 커트라인이 달라지므로 입주자모집공고의 가점제 물량과 경쟁률을 함께 확인하세요.</p>
+
+<h2>가점이 부족할 때 검토할 세 가지</h2>
+<ul>
+<li><strong>특별공급</strong> — 신혼부부·생애최초·다자녀·노부모부양·기관추천 등은 가점 대신 별도 요건으로 선정합니다. 본인이 해당되는 유형이 있는지 먼저 확인하세요.</li>
+<li><strong>추첨제</strong> — 가점제 물량 외에 추첨 물량이 있는 단지가 있습니다. 투기과열지구·청약과열지역 여부에 따라 추첨 비율이 달라지므로 공고문을 확인해야 합니다.</li>
+<li><strong>공공분양</strong> — 국민주택은 가점 대신 저축총액, 거주기간, 무주택기간 등 다른 기준을 적용합니다. 청약저축을 오래 유지했다면 유리할 수 있습니다.</li>
+</ul>
+
+<h2>전월세 전환율 — 법정 상한은 기준금리 + 2%p</h2>
+<p>전월세 전환율은 <strong>(월세 × 12 ÷ 전환되는 보증금) × 100</strong>으로 계산합니다. 반대로 보증금을 월세로 돌릴 때는 <strong>월세 = 전환할 보증금 × 전환율 ÷ 12</strong>입니다. 예를 들어 보증금 5,000만 원 중 2,000만 원을 월세로 전환하고 연 5.0%를 적용하면 월세는 83,333원이 됩니다. 같은 조건에서 연 4.5%라면 75,000원입니다.</p>
+<p>주택임대차보호법 제7조의2에 따라 전환율 상한은 <strong>한국은행 기준금리 + 2.0%p</strong>입니다. 현행 기준금리가 3.00%라면 상한은 연 5.0%이고, 기준금리가 바뀌면 상한도 함께 움직입니다. 상한을 넘는 부분은 효력이 없으므로 초과분을 지급했다면 반환을 청구할 수 있습니다.</p>
+<div class="table-wrap">
+<table>
+<caption>보증금 5,000만 원 중 2,000만 원을 월세로 전환할 때</caption>
+<thead><tr><th scope="col">적용 전환율</th><th scope="col">월세</th><th scope="col">판정</th></tr></thead>
+<tbody>
+<tr><td>연 4.5%</td><td>75,000원</td><td>상한 이내</td></tr>
+<tr><td>연 5.0% (기준금리 3.0% + 2%p)</td><td>83,333원</td><td>법정 상한</td></tr>
+<tr><td>연 5.5%</td><td>91,667원</td><td><strong>상한 초과 · 월 8,334원 무효</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p>계약갱신요구권을 행사해 계약을 갱신하는 경우에는 임대료 증액이 5%를 넘을 수 없습니다(주택임대차보호법 제7조). 이는 전월세 전환율 상한과 별개의 규정이므로, 갱신인지 신규 계약인지에 따라 적용 기준이 다릅니다.</p>
+
+<h2>전월세 계약 전 체크리스트</h2>
+<ul>
+<li><strong>등기부등본</strong> — 근저당·가압류·신탁 등 권리 관계를 확인하고, 보증금과 채권최고액을 비교하세요.</li>
+<li><strong>전입신고와 확정일자</strong> — 잔금일 당일에 전입신고와 확정일자를 받아야 우선변제권이 생깁니다.</li>
+<li><strong>보증금 반환보증</strong> — HUG·HF 전세보증금반환보증 가입 가능 여부와 보증료를 확인하세요.</li>
+<li><strong>월세 세액공제</strong> — 무주택 세대주가 총급여 요건을 충족하면 월세의 일정 비율을 세액공제 받을 수 있습니다.</li>
+<li><strong>전세대출</strong> — 한도, 금리, 보증료, 중도상환수수료를 함께 비교하세요.</li>
+<li><strong>특약</strong> — 관리비 항목, 수선비 부담, 원상복구 범위를 계약서에 명시하세요.</li>
+</ul>
+  </section>
+
+  <section class="card" aria-labelledby="faq-title">
+    <h2 class="sec-title" id="faq-title">자주 묻는 질문</h2>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>청약 가점 84점은 어떻게 구성되나요?</summary>
+        <div class="a"><p>민영주택 일반공급 가점제 기준으로 무주택기간 32점, 부양가족 수 35점, 청약통장 가입기간 17점을 합해 84점 만점입니다. 부양가족 배점이 가장 커서 가족 구성이 당락에 큰 영향을 미칩니다.</p></div>
+      </details>
+      <details class="faq">
+        <summary>무주택 기간은 언제부터 계산하나요?</summary>
+        <div class="a"><p>본인이 만 30세가 된 날(그 전에 혼인했다면 혼인신고일)부터 무주택으로 계속 지낸 기간입니다. 30세 이전 기간은 인정되지 않으므로 20대에 오래 무주택이었어도 가점에는 반영되지 않습니다.</p></div>
+      </details>
+      <details class="faq">
+        <summary>부양가족은 누구까지 인정되나요?</summary>
+        <div class="a"><p>신청자와 같은 주민등록등본에 등재되어 있고 신청자 또는 배우자와 3년 이상 같은 등본에 있었던 배우자·부모·자녀·형제자매 등입니다. 30세 이상이거나 연간 소득이 있는 경우 등은 인정되지 않을 수 있어 입주자모집공고 기준을 확인해야 합니다.</p></div>
+      </details>
+      <details class="faq">
+        <summary>전월세 전환율 법정 상한은 얼마인가요?</summary>
+        <div class="a"><p>주택임대차보호법 제7조의2에 따라 한국은행 기준금리 + 2.0%p입니다. 기준금리 3.00% 기준으로 상한은 연 5.0%이며, 기준금리가 바뀌면 상한도 함께 조정됩니다.</p></div>
+      </details>
+      <details class="faq">
+        <summary>상한을 넘는 전환율을 요구하면 어떻게 하나요?</summary>
+        <div class="a"><p>법정 상한을 초과하는 부분은 효력이 없습니다. 이미 지급했다면 초과분의 반환을 청구할 수 있고, 분쟁이 있으면 주택임대차분쟁조정위원회에 조정을 신청할 수 있습니다. 계약서와 지급 내역을 증빙으로 남겨 두세요.</p></div>
+      </details>
+      <details class="faq">
+        <summary>계약 갱신 때 월세를 얼마까지 올릴 수 있나요?</summary>
+        <div class="a"><p>계약갱신요구권을 행사하는 경우 임대료 증액은 5%를 넘을 수 없습니다. 전월세 전환율 상한(기준금리+2%p)과는 별개의 규정이므로, 갱신 계약과 신규 계약의 기준이 다르다는 점을 확인하세요.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="related-title">
+    <h2 class="sec-title" id="related-title">함께 쓰면 좋은 계산기</h2>
+    <div class="related">
+      <a href="./savings.html"><strong>예적금 이자 계산기</strong><span>단리·월복리와 세금 3가지 세후 이자 비교</span></a>
+      <a href="./salary.html"><strong>연봉 실수령액 계산기</strong><span>4대보험·소득세 반영 월 실수령액 계산</span></a>
+      <a href="./refinance.html"><strong>대출 갈아타기 계산기</strong><span>대환 손익분기와 중도상환수수료 계산</span></a>
+      <a href="./severance.html"><strong>퇴직금·실업급여 계산기</strong><span>평균임금·소정급여일수·연차수당</span></a>
+    </div>
+  </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="disclaimer">
+      <b>면책 안내</b><br>
+      본 계산 결과는 참고용이며 실제 금융기관·세무 기준과 차이가 있을 수 있습니다. 금리·세율·보험료율·상한액은 상품과 제도 개정에 따라 달라지므로, 실제 계약이나 신고 전에는 해당 금융기관·국세청·고용노동부·국토교통부의 최신 기준을 확인하시기 바랍니다. 본 사이트는 특정 금융상품의 가입이나 투자를 권유하지 않습니다.
+    </div>
+    <div class="foot-brand">
+      <span class="brand-mark" aria-hidden="true">₩</span>
+      <span>계산기 허브</span>
+    </div>
+    <div class="foot-links">
+      <a href="./">홈</a>
+      <a href="./savings.html">예적금 이자</a>
+      <a href="./salary.html">실수령액</a>
+      <a href="./refinance.html">대출갈아타기</a>
+      <a href="./severance.html">퇴직금·실업급여</a>
+      <a href="./housing.html">청약·전월세</a>
+      <a href="./privacy.html">개인정보처리방침</a>
+    </div>
+    <p class="copy">© 2026 계산기 허브. 모든 계산은 사용자의 브라우저에서만 이뤄집니다.</p>
+  </div>
+</footer>
+
+<script src="./app.js"></script>
+</body>
+</html>

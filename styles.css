@@ -867,3 +867,135 @@ details.faq .a strong { color: var(--ink); }
   body { background: #fff; }
   .card { box-shadow: none; border: 1px solid #ddd; }
 }
+
+/* ==========================================================================
+   계산기 전용 페이지 (전용 URL) — 내비게이션·소개·가이드 본문
+   ========================================================================== */
+.calc-nav {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.calc-nav-inner {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 9px 0;
+  scrollbar-width: none;
+}
+.calc-nav-inner::-webkit-scrollbar { display: none; }
+.calc-nav a {
+  flex: 0 0 auto;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink-2);
+  background: #f2f4f6;
+  border-radius: 999px;
+  padding: 7px 12px;
+  white-space: nowrap;
+}
+.calc-nav a:hover { background: #e8ebee; color: var(--ink); text-decoration: none; }
+.calc-nav a[aria-current="page"] { background: var(--blue); color: #fff; }
+
+.intro { padding: 24px 0 16px; }
+.crumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ink-3);
+  margin-bottom: 10px;
+}
+.crumb a { color: var(--ink-3); }
+.intro h1 {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.38;
+  letter-spacing: -0.03em;
+}
+.intro .lead {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--ink-2);
+}
+.intro .meta {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+.sec-title {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.guide h2 {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.45;
+  padding-top: 22px;
+}
+.guide h2:first-child { padding-top: 2px; }
+.guide h3 {
+  font-size: 15px;
+  font-weight: 800;
+  margin-top: 18px;
+}
+.guide p, .guide li {
+  font-size: 13.8px;
+  line-height: 1.85;
+  color: var(--ink-2);
+}
+.guide p { margin-top: 8px; }
+.guide ul, .guide ol { margin-top: 8px; }
+.guide .table-wrap { margin-top: 12px; }
+.guide table th, .guide table td { white-space: normal; }
+.guide table td { line-height: 1.6; }
+.guide sup { font-size: 10px; }
+
+.faq-list { margin-top: 6px; }
+
+.related {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+.related a {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 13px 15px;
+  background: #fff;
+}
+.related a:hover { border-color: var(--blue); text-decoration: none; }
+.related strong { display: block; font-size: 14px; font-weight: 800; color: var(--ink); }
+.related span { display: block; margin-top: 4px; font-size: 12.5px; color: var(--ink-3); line-height: 1.55; }
+
+.calc-cards { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 10px; }
+.calc-cards li { margin: 0; }
+.calc-cards a {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: #fff;
+}
+.calc-cards a:hover { border-color: var(--blue); text-decoration: none; }
+.calc-cards strong { display: block; font-size: 14.5px; font-weight: 800; color: var(--ink); }
+.calc-cards span { display: block; margin-top: 4px; font-size: 12.5px; color: var(--ink-3); line-height: 1.55; }
+
+@media (min-width: 560px) {
+  .related { grid-template-columns: 1fr 1fr; }
+  .calc-cards { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 720px) {
+  .intro { padding: 34px 0 20px; }
+  .intro h1 { font-size: 27px; }
+}
+@media print {
+  .calc-nav { display: none; }
+}

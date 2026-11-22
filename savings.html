@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>예적금 이자 계산기 | 단리·월복리·세금 3가지 비교 계산</title>
+<meta name="description" content="예금·적금 이자를 단리와 월복리로 각각 계산하고 일반과세 15.4%, 세금우대 1.4%, 비과세 0% 세 가지 세후 이자를 한 번에 비교합니다. 현행 요율 기준 무료 계산기.">
+<meta name="keywords" content="예금 이자 계산기, 적금 이자 계산기, 단리 계산, 월복리 계산, 세후 이자, 이자소득세 15.4%, 세금우대 1.4%, 비과세 적금, 예금 적금 차이">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="계산기 허브">
+<meta name="theme-color" content="#3182f6">
+<meta name="google-adsense-account" content="ca-pub-6515548213411698">
+<link rel="canonical" href="https://qazwsx1666-hash.github.io/finance-tools/savings.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="계산기 허브">
+<meta property="og:title" content="예적금 이자 계산기 | 단리·월복리·세금 3가지 비교 계산">
+<meta property="og:description" content="예금·적금 이자를 단리와 월복리로 각각 계산하고 일반과세 15.4%, 세금우대 1.4%, 비과세 0% 세 가지 세후 이자를 한 번에 비교합니다. 현행 요율 기준 무료 계산기.">
+<meta property="og:url" content="https://qazwsx1666-hash.github.io/finance-tools/savings.html">
+<meta property="og:image" content="https://qazwsx1666-hash.github.io/finance-tools/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="예적금 이자 계산기 | 단리·월복리·세금 3가지 비교 계산">
+<meta name="twitter:description" content="예금·적금 이자를 단리와 월복리로 각각 계산하고 일반과세 15.4%, 세금우대 1.4%, 비과세 0% 세 가지 세후 이자를 한 번에 비교합니다. 현행 요율 기준 무료 계산기.">
+<meta name="twitter:image" content="https://qazwsx1666-hash.github.io/finance-tools/og-image.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233182f6'/%3E%3Ctext x='32' y='45' font-size='34' font-family='-apple-system,sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3E%E2%82%A9%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="./styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "예·적금 이자 계산기 — 단리·월복리와 세금 3가지 비교",
+  "url": "https://qazwsx1666-hash.github.io/finance-tools/savings.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "inLanguage": "ko-KR",
+  "description": "예금·적금 이자를 단리와 월복리로 각각 계산하고 일반과세 15.4%, 세금우대 1.4%, 비과세 0% 세 가지 세후 이자를 한 번에 비교합니다. 현행 요율 기준 무료 계산기.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "KRW"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "계산기 허브",
+    "url": "https://qazwsx1666-hash.github.io/finance-tools/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "단리와 월복리는 실제로 얼마나 차이가 나나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1,000만 원을 연 3.5%로 1년 맡기면 단리 이자는 350,000원, 월복리 이자는 355,670원으로 5,670원 차이입니다. 3년으로 늘리면 단리 1,050,000원, 월복리 1,105,409원으로 차이가 55,409원까지 벌어집니다. 기간이 길고 금리가 높을수록 차이가 커집니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "적금 이자가 예금보다 왜 적나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "적금은 매달 나눠 넣기 때문에 첫 달에 넣은 돈만 전체 기간 이자를 받고 마지막 달에 넣은 돈은 1개월치만 받습니다. 12개월 적금의 평균 예치기간이 약 6.5개월이어서, 같은 금리·같은 총납입액이면 예금 이자의 절반 남짓이 됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "이자소득세 15.4%는 어떻게 구성되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "이자소득세 14%에 지방소득세 1.4%(소득세의 10%)를 더한 세율입니다. 금융소득(이자+배당)이 연 2,000만 원을 넘으면 초과분이 종합소득에 합산되어 최대 45%까지 세율이 올라가므로, 이 계산기는 2,000만 원 이하인 일반적인 경우를 기준으로 합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "우대금리를 포함한 금리를 입력해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "조건을 모두 충족해 실제로 받을 금리를 넣으세요. 급여이체·카드 실적·자동이체 같은 조건을 지키지 못할 가능성이 있다면 기본금리로 계산해 최소 수익을 확인하는 편이 안전합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "만기 전에 해지하면 이자는 어떻게 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "약정금리가 아니라 상품별 중도해지금리가 적용됩니다. 보통 연 0.1~0.5% 수준이고 경과 기간에 따라 차등 적용됩니다. 세금은 실제로 받은 이자에만 붙으므로 원금이 줄지는 않지만, 특판 상품은 우대금리를 전액 회수하기도 합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "계산 결과가 은행 앱과 몇 원씩 다른 이유는 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "은행은 상품에 따라 월 단위 또는 일 단위로 이자를 계산하고, 원 단위 미만 절사·반올림 기준도 다릅니다. 이 계산기는 월 단위 기준으로 계산하므로 며칠 차이에서 오는 몇십~몇백 원 수준의 차이가 날 수 있습니다."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "계산기 허브",
+      "item": "https://qazwsx1666-hash.github.io/finance-tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "예적금 이자",
+      "item": "https://qazwsx1666-hash.github.io/finance-tools/savings.html"
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="skip" href="#main">본문으로 바로가기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="./">
+      <span class="brand-mark" aria-hidden="true">₩</span>
+      <span class="brand-name">계산기 허브<small>생활·금융 계산기 5종</small></span>
+    </a>
+    <span class="header-note">현행 요율 반영</span>
+  </div>
+</header>
+
+  <nav class="calc-nav" aria-label="계산기 바로가기">
+    <div class="wrap calc-nav-inner">
+      <a href="./">전체 계산기</a>
+      <a href="./savings.html" aria-current="page">예적금 이자</a>
+      <a href="./salary.html">실수령액</a>
+      <a href="./refinance.html">대출갈아타기</a>
+      <a href="./severance.html">퇴직금·실업급여</a>
+      <a href="./housing.html">청약·전월세</a>
+    </div>
+  </nav>
+
+<main id="main">
+  <div class="wrap">
+
+    <div class="intro">
+      <nav class="crumb" aria-label="현재 위치">
+        <a href="./">계산기 허브</a><span aria-hidden="true">›</span><span>예적금 이자</span>
+      </nav>
+      <h1>예·적금 이자 계산기 — 단리·월복리와 세금 3가지 비교</h1>
+      <p class="lead">목돈을 맡길 때 실제로 손에 쥐는 이자는 세전 이자가 아닙니다. 상품 유형(예금·적금), 이자 방식(단리·월복리), 과세 방식(일반·세금우대·비과세)을 바꿔 가며 세후 수령액을 바로 비교해 보세요. 입력한 값은 서버로 전송되지 않고 브라우저에서만 계산됩니다.</p>
+      <p class="meta">현행 요율 기준 · 회원가입 없이 무료 · 입력한 값은 브라우저에서만 계산됩니다</p>
+    </div>
+
+    <section class="panel is-active" id="panel-save" tabindex="-1">
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <h2>이자 바로 계산하기</h2>
+            <p>상품 유형과 이자 방식을 바꾸면 결과가 즉시 갱신됩니다.</p>
+          </div>
+          <span class="step">STEP 1</span>
+        </div>
+
+        <div class="field">
+          <span class="field-label">상품 유형</span>
+          <div class="seg" data-seg="saveType">
+            <button type="button" data-value="deposit" aria-pressed="true">예금<small>거치식 · 목돈</small></button>
+            <button type="button" data-value="savings" aria-pressed="false">적금<small>정액적립식 · 매월</small></button>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field">
+            <label class="field-label" for="inSaveAmount"><span id="lblSaveAmount">예치 금액</span></label>
+            <div class="input-box">
+              <input id="inSaveAmount" class="js-money" inputmode="numeric" autocomplete="off" value="10,000,000">
+              <span class="unit">원</span>
+            </div>
+            <p class="hint" id="readSaveAmount">1,000만 원</p>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="inSaveMonths">가입 기간</label>
+            <div class="input-box">
+              <input id="inSaveMonths" inputmode="numeric" autocomplete="off" value="12">
+              <span class="unit">개월</span>
+            </div>
+            <div class="chips" data-chips="inSaveMonths">
+              <button type="button" class="chip" data-value="6">6개월</button>
+              <button type="button" class="chip" data-value="12">12개월</button>
+              <button type="button" class="chip" data-value="24">24개월</button>
+              <button type="button" class="chip" data-value="36">36개월</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="inSaveRate">연이율</label>
+            <div class="input-box">
+              <input id="inSaveRate" inputmode="decimal" autocomplete="off" value="3.5">
+              <span class="unit">%</span>
+            </div>
+            <p class="hint plain">우대금리 포함 최종 적용금리를 넣으세요.</p>
+          </div>
+
+          <div class="field">
+            <span class="field-label">이자 방식</span>
+            <div class="seg" data-seg="saveComp">
+              <button type="button" data-value="simple" aria-pressed="true">단리</button>
+              <button type="button" data-value="monthly" aria-pressed="false">월복리</button>
+            </div>
+            <p class="hint plain" id="hintSaveComp">원금에만 이자가 붙습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="result" aria-live="polite">
+          <div class="res-label">세전 이자</div>
+          <div class="res-value" id="outSaveInterest">0 원</div>
+          <div class="res-sub" id="outSaveInterestRead">0 원</div>
+          <div class="res-grid">
+            <div><span>총 납입 원금</span><strong id="outSavePrincipal">0 원</strong></div>
+            <div><span>만기 수령액(일반과세)</span><strong id="outSaveTotalNormal">0 원</strong></div>
+          </div>
+        </div>
+
+        <h3 class="mt-16" style="font-size:15px;font-weight:800;">세금 3가지 비교</h3>
+        <div class="table-wrap mt-8">
+          <table>
+            <caption>같은 이자에 세금만 바꿔 계산한 결과입니다.</caption>
+            <thead>
+              <tr>
+                <th scope="col">과세 구분</th>
+                <th scope="col">세율</th>
+                <th scope="col">세금</th>
+                <th scope="col">세후 이자</th>
+                <th scope="col">세후 수령액</th>
+              </tr>
+            </thead>
+            <tbody id="outSaveTaxRows"></tbody>
+          </table>
+        </div>
+
+        <div class="bars mt-16" id="outSaveBars" aria-hidden="true"></div>
+        <p class="notice info" id="outSaveInsight"></p>
+        <p class="table-note">세금은 이자 전액에 부과되며, 원금에는 세금이 붙지 않습니다. 일반과세 15.4%는 소득세 14% + 지방소득세 1.4%입니다.</p>
+      </div>
+    </section>
+
+  <section class="card guide" aria-label="계산 기준과 활용 가이드">
+<h2>이자 계산의 기본 — 예금과 적금은 계산식이 다릅니다</h2>
+<p>예금(거치식)은 목돈을 한 번에 맡기고 만기에 원금과 이자를 함께 돌려받는 상품입니다. 적금(정액적립식)은 매달 같은 금액을 나눠 넣고, 만기에 총납입액과 이자를 받습니다. 이름이 비슷해도 이자 계산식이 완전히 다르기 때문에, 같은 금리라면 결과도 크게 달라집니다.</p>
+
+<h3>예금 이자 — 원금 전체에 이자가 붙습니다</h3>
+<p>단리는 <strong>원금 × 연이율 × (개월 ÷ 12)</strong>로 계산합니다. 1,000만 원을 연 3.5% 단리로 12개월 맡기면 세전 이자는 350,000원입니다. 이자에 다시 이자가 붙는 월복리는 <strong>원금 × [(1 + 연이율 ÷ 12)<sup>개월</sup> − 1]</strong>로 계산하며, 같은 조건에서 355,670원이 됩니다. 1년 만기에서는 차이가 5,670원이지만, 3년으로 늘리면 단리 1,050,000원과 월복리 1,105,409원으로 벌어집니다.</p>
+
+<h3>적금 이자 — 매달 넣은 돈의 예치기간이 다릅니다</h3>
+<p>적금 단리는 <strong>월납입액 × 연이율 ÷ 12 × n(n+1) ÷ 2</strong>(n은 납입 개월 수)로 계산합니다. 월 100만 원씩 12개월, 연 3.5%라면 세전 이자는 227,500원입니다. 첫 달에 넣은 100만 원만 12개월치 이자를 받고, 마지막 달에 넣은 돈은 1개월치만 받기 때문입니다. 그래서 12개월 적금의 평균 예치기간은 약 6.5개월이고, 이자도 예금의 절반 남짓이 됩니다.</p>
+
+<div class="table-wrap">
+<table>
+<caption>같은 연 3.5%에서 예금과 적금의 이자 비교 (세후는 일반과세 15.4% 적용)</caption>
+<thead><tr><th scope="col">상품·방식</th><th scope="col">납입 원금</th><th scope="col">세전 이자</th><th scope="col">세후 이자</th><th scope="col">만기 수령액</th></tr></thead>
+<tbody>
+<tr><td>예금 1,000만 원 · 단리</td><td>10,000,000원</td><td>350,000원</td><td>296,100원</td><td><strong>10,296,100원</strong></td></tr>
+<tr><td>예금 1,000만 원 · 월복리</td><td>10,000,000원</td><td>355,670원</td><td>300,896원</td><td><strong>10,300,896원</strong></td></tr>
+<tr><td>적금 월 100만 원 · 단리</td><td>12,000,000원</td><td>227,500원</td><td>192,465원</td><td><strong>12,192,465원</strong></td></tr>
+<tr><td>적금 월 100만 원 · 월복리</td><td>12,000,000원</td><td>229,951원</td><td>194,538원</td><td><strong>12,194,538원</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="table-note">총납입액을 같게 맞춰도(예금 1,200만 원 · 단리 420,000원) 적금 이자(227,500원)보다 훨씬 많습니다. 예금과 적금을 비교할 때는 금리만 보지 말고 총납입액과 평균 예치기간을 함께 맞춰야 합니다.</p>
+
+<h2>세금 3가지 — 같은 이자, 세후로는 100만 원 넘게 차이 납니다</h2>
+<p>이자소득세는 원금이 아니라 <strong>이자 전액</strong>에 부과됩니다. 일반과세 15.4%는 소득세 14%에 지방소득세 1.4%(소득세의 10%)를 더한 세율이고, 세금우대는 1.4%, 비과세는 0%입니다. 세전 이자가 350,000원일 때 세금은 각각 53,900원, 4,900원, 0원으로 갈립니다.</p>
+<div class="table-wrap">
+<table>
+<caption>세전 이자 350,000원 기준 세금 3가지 비교</caption>
+<thead><tr><th scope="col">과세 구분</th><th scope="col">세율</th><th scope="col">세금</th><th scope="col">세후 이자</th><th scope="col">일반과세와 차이</th></tr></thead>
+<tbody>
+<tr><td>일반과세</td><td>15.4%</td><td>53,900원</td><td>296,100원</td><td>—</td></tr>
+<tr><td>세금우대</td><td>1.4%</td><td>4,900원</td><td>345,100원</td><td>+49,000원</td></tr>
+<tr><td>비과세</td><td>0%</td><td>0원</td><td>350,000원</td><td>+53,900원</td></tr>
+</tbody>
+</table>
+</div>
+<p>금액과 기간이 커지면 격차도 커집니다. 3,000만 원을 연 3.5% 단리로 3년 맡기면 세전 이자가 3,150,000원이고, 일반과세로는 485,100원을 세금으로 내지만 비과세 상품에서는 한 푼도 내지 않습니다.</p>
+
+<h3>세금우대 1.4%는 어떤 상품인가요</h3>
+<p>농협·수협·신협·새마을금고·산림조합 같은 상호금융 조합의 예탁금, 또는 조세특례제한법상 세금우대저축이 여기에 해당합니다. 1인당 가입 한도와 가입 시기, 상품별 조건이 정해져 있고, 지방소득세 포함 여부도 상품마다 표기가 다르므로 가입 전 약관의 세율 표기를 확인해야 합니다.</p>
+
+<h3>비과세 상품은 아무나 가입할 수 있나요</h3>
+<p>비과세종합저축은 만 65세 이상, 장애인, 국가유공자 등 정해진 요건을 충족해야 하고 1인당 원금 한도가 있습니다. 개인종합자산관리계좌(ISA)도 일정 요건에서 이자·배당소득이 비과세되지만 납입 한도와 의무 가입기간이 있습니다. 요건을 충족하지 못하면 일반과세로 원천징수되므로, 가입 전에 자격과 한도를 먼저 확인하세요.</p>
+
+<h2>금리를 세후 수익률로 바꿔 비교하는 방법</h2>
+<p>광고에 적힌 금리는 대부분 세전 금리입니다. 일반과세 상품은 세후 수익률이 세전 금리의 약 84.6%(1 − 0.154)가 됩니다. 연 3.5% 일반과세 상품의 세후 수익률은 2.96%이고, 비과세 3.0% 상품의 세후 수익률은 3.0%입니다. 즉 <strong>금리가 0.5%p 낮아 보이는 비과세 상품이 실제로는 더 유리</strong>합니다. 세금우대 1.4% 상품은 세후 수익률이 세전 금리의 98.6% 수준이므로 일반과세 상품보다 0.1%p만 높아도 역전됩니다.</p>
+
+<h2>실전 비교 — 같은 돈이라면 어디에 넣는 게 유리할까</h2>
+<ol>
+<li><strong>총납입액을 맞춰 비교하세요.</strong> 예금 1,200만 원과 적금 월 100만 원은 납입 총액이 같지만 이자는 두 배 가까이 차이 납니다.</li>
+<li><strong>만기 재투자를 함께 계산하세요.</strong> 12개월 단리를 3년간 굴리는 것과 36개월 상품에 한 번에 넣는 것은 이자가 다릅니다. 계산기에 두 조건을 각각 넣어 세후 수령액으로 비교하세요.</li>
+<li><strong>우대금리는 조건 충족 여부까지 확인하세요.</strong> 급여이체·카드 실적·자동이체·앱 로그인 등 조건을 지키지 못하면 기본금리만 적용됩니다. 조건을 못 지킬 가능성이 있다면 기본금리로 계산하는 편이 안전합니다.</li>
+<li><strong>세금 조건을 금리로 환산하세요.</strong> 위에서 본 것처럼 일반과세 3.5%와 비과세 3.0%는 후자가 유리합니다.</li>
+</ol>
+
+<h2>계산 결과를 실제 상품에 적용할 때 확인할 것</h2>
+<ul>
+<li><strong>이자 계산 단위</strong> — 은행은 월 단위(12개월) 또는 일 단위(365일)로 이자를 계산합니다. 일 단위 상품은 실제 예치일수에 따라 몇십~몇백 원 차이가 납니다.</li>
+<li><strong>원 단위 절사</strong> — 세금과 이자를 원 단위 미만에서 절사하는 기준이 금융기관마다 다릅니다.</li>
+<li><strong>중도해지 금리</strong> — 만기 전에 해지하면 약정금리가 아니라 경과 기간별 중도해지금리(보통 연 0.1~0.5%)가 적용됩니다. 일부 특판은 우대금리를 전액 회수합니다.</li>
+<li><strong>예금자보호 한도</strong> — 금융기관별 1인당 원금과 이자를 합해 5,000만 원까지 보호됩니다. 한 곳에 몰아넣을 때는 이 한도를 기준으로 나누세요.</li>
+<li><strong>특판 한도와 자동재예치</strong> — 특판 상품은 1인당 가입 한도가 있고, 만기 후에는 자동으로 기본금리 상품으로 재예치되는 경우가 많습니다.</li>
+</ul>
+  </section>
+
+  <section class="card" aria-labelledby="faq-title">
+    <h2 class="sec-title" id="faq-title">자주 묻는 질문</h2>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>단리와 월복리는 실제로 얼마나 차이가 나나요?</summary>
+        <div class="a"><p>1,000만 원을 연 3.5%로 1년 맡기면 단리 이자는 350,000원, 월복리 이자는 355,670원으로 5,670원 차이입니다. 3년으로 늘리면 단리 1,050,000원, 월복리 1,105,409원으로 차이가 55,409원까지 벌어집니다. 기간이 길고 금리가 높을수록 차이가 커집니다.</p></div>
+      </details>
+      <details class="faq">
+        <summary>적금 이자가 예금보다 왜 적나요?</summary>
+        <div class="a"><p>적금은 매달 나눠 넣기 때문에 첫 달에 넣은 돈만 전체 기간 이자를 받고 마지막 달에 넣은 돈은 1개월치만 받습니다. 12개월 적금의 평균 예치기간이 약 6.5개월이어서, 같은 금리·같은 총납입액이면 예금 이자의 절반 남짓이 됩니다.</p></div>
+      </details>
+      <details class="faq">
+        <summary>이자소득세 15.4%는 어떻게 구성되나요?</summary>
+        <div class="a"><p>이자소득세 14%에 지방소득세 1.4%(소득세의 10%)를 더한 세율입니다. 금융소득(이자+배당)이 연 2,000만 원을 넘으면 초과분이 종합소득에 합산되어 최대 45%까지 세율이 올라가므로, 이 계산기는 2,000만 원 이하인 일반적인 경우를 기준으로 합니다.</p></div>
+      </details>
+      <details class="faq">
+        <summary>우대금리를 포함한 금리를 입력해야 하나요?</summary>
+        <div class="a"><p>조건을 모두 충족해 실제로 받을 금리를 넣으세요. 급여이체·카드 실적·자동이체 같은 조건을 지키지 못할 가능성이 있다면 기본금리로 계산해 최소 수익을 확인하는 편이 안전합니다.</p></div>
+      </details>
+      <details class="faq">
+        <summary>만기 전에 해지하면 이자는 어떻게 되나요?</summary>
+        <div class="a"><p>약정금리가 아니라 상품별 중도해지금리가 적용됩니다. 보통 연 0.1~0.5% 수준이고 경과 기간에 따라 차등 적용됩니다. 세금은 실제로 받은 이자에만 붙으므로 원금이 줄지는 않지만, 특판 상품은 우대금리를 전액 회수하기도 합니다.</p></div>
+      </details>
+      <details class="faq">
+        <summary>계산 결과가 은행 앱과 몇 원씩 다른 이유는 무엇인가요?</summary>
+        <div class="a"><p>은행은 상품에 따라 월 단위 또는 일 단위로 이자를 계산하고, 원 단위 미만 절사·반올림 기준도 다릅니다. 이 계산기는 월 단위 기준으로 계산하므로 며칠 차이에서 오는 몇십~몇백 원 수준의 차이가 날 수 있습니다.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="related-title">
+    <h2 class="sec-title" id="related-title">함께 쓰면 좋은 계산기</h2>
+    <div class="related">
+      <a href="./salary.html"><strong>연봉 실수령액 계산기</strong><span>4대보험·소득세 반영 월 실수령액 계산</span></a>
+      <a href="./refinance.html"><strong>대출 갈아타기 계산기</strong><span>대환 손익분기와 중도상환수수료 계산</span></a>
+      <a href="./severance.html"><strong>퇴직금·실업급여 계산기</strong><span>평균임금·소정급여일수·연차수당</span></a>
+      <a href="./housing.html"><strong>청약 가점·전월세 계산기</strong><span>84점 만점 가점과 법정 전환율 상한</span></a>
+    </div>
+  </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="disclaimer">
+      <b>면책 안내</b><br>
+      본 계산 결과는 참고용이며 실제 금융기관·세무 기준과 차이가 있을 수 있습니다. 금리·세율·보험료율·상한액은 상품과 제도 개정에 따라 달라지므로, 실제 계약이나 신고 전에는 해당 금융기관·국세청·고용노동부·국토교통부의 최신 기준을 확인하시기 바랍니다. 본 사이트는 특정 금융상품의 가입이나 투자를 권유하지 않습니다.
+    </div>
+    <div class="foot-brand">
+      <span class="brand-mark" aria-hidden="true">₩</span>
+      <span>계산기 허브</span>
+    </div>
+    <div class="foot-links">
+      <a href="./">홈</a>
+      <a href="./savings.html">예적금 이자</a>
+      <a href="./salary.html">실수령액</a>
+      <a href="./refinance.html">대출갈아타기</a>
+      <a href="./severance.html">퇴직금·실업급여</a>
+      <a href="./housing.html">청약·전월세</a>
+      <a href="./privacy.html">개인정보처리방침</a>
+    </div>
+    <p class="copy">© 2026 계산기 허브. 모든 계산은 사용자의 브라우저에서만 이뤄집니다.</p>
+  </div>
+</footer>
+
+<script src="./app.js"></script>
+</body>
+</html>

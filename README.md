@@ -20,12 +20,27 @@ GitHub Pages에 그대로 올려 바로 서비스할 수 있고, Google AdSense 
 ## 파일 구성
 
 ```
-index.html      메인 페이지 (5개 탭 + SEO 메타 + FAQ 텍스트)
+index.html      메인 허브 (5개 탭 + 전용 페이지 링크 + SEO 메타 + FAQ 텍스트)
+savings.html    예·적금 이자 계산기 전용 페이지 (가이드·배점 예시·FAQ)
+salary.html     연봉 실수령액 계산기 전용 페이지 (2026 4대보험 요율·연봉대별 표)
+refinance.html  대출 갈아타기 계산기 전용 페이지 (손익분기·수수료·절차)
+severance.html  퇴직금·실업급여 계산기 전용 페이지 (평균임금·소정급여일수·연차수당)
+housing.html    청약 가점·전월세 계산기 전용 페이지 (84점 배점표·법정 전환율)
 styles.css      전체 스타일 (모바일 퍼스트, 토스풍 UI)
 app.js          계산 로직 전체 (의존성 없음)
 privacy.html    개인정보처리방침 (AdSense 승인 대비)
+sitemap.xml     7개 URL (허브 + 계산기 5종 + 개인정보처리방침)
+robots.txt      전체 허용 + sitemap 위치
 og-image.png    OpenGraph 공유 이미지 1200×630
 ```
+
+## 전용 페이지 SEO 구성
+
+- 5개 계산기마다 고유 `<title>`·`<meta name="description">`·`<link rel="canonical">`·Open Graph 태그
+- 페이지당 `<h1>` 1개 + 체계적 `<h2>`·`<h3>`, 계산기 UI 아래 2,000자 이상 가이드·예시표
+- JSON-LD: `WebApplication` + `FAQPage` + `BreadcrumbList`
+- `<meta name="google-adsense-account" content="ca-pub-6515548213411698">` 전체 페이지 포함
+- 허브와 전용 페이지 사이를 표준 `<a href>` 내비게이션으로 연결 (크롤링 경로 확보)
 
 모든 경로는 `./` 상대 경로라 프로젝트 페이지(`/repo-name/`)든 커스텀 도메인이든 깨지지 않습니다.
 
