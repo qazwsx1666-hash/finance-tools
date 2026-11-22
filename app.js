@@ -168,6 +168,10 @@
     if (document.body) {
       $$('.hero').forEach(function (h) { h.style.display = name === 'save' ? '' : 'none'; });
     }
+    var activeTab = $('.tab[data-tab="' + name + '"]');
+    if (activeTab && activeTab.scrollIntoView) {
+      try { activeTab.scrollIntoView({ block: 'nearest', inline: 'center' }); } catch (err) { /* noop */ }
+    }
     try { history.replaceState(null, '', '#' + name); } catch (err) { /* noop */ }
   }
 
@@ -801,7 +805,7 @@
 
     var note = safe('outPtNote');
     if (note) {
-      note.className = 'notice ' + gradeClass;
+      note.className = 'notice info';
       note.innerHTML = '<b>' + total + '점</b>은 민영주택 일반공급 가점제 기준입니다. 최근 수도권 인기 단지는 60~70점대에서 당락이 갈리며, 국민주택(공공분양)은 가점 대신 저축총액·거주기간 등 다른 기준을 씁니다.';
     }
   }
