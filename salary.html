@@ -124,32 +124,36 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="/shell/calc.css?v=20261125a">
 </head>
 
 <body>
 <a class="skip" href="#main">본문으로 바로가기</a>
 
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="./">
-      <span class="brand-mark" aria-hidden="true">₩</span>
-      <span class="brand-name">계산기 허브<small>생활·금융 계산기 5종</small></span>
-    </a>
-    <span class="header-note">현행 요율 반영</span>
+<header class="cbar">
+  <div class="cbar-in">
+    <a class="cbar-portal" href="/">← 포털 홈</a>
+    <a class="cbar-brand" href="/calc/"><span class="cbar-mark" aria-hidden="true">₩</span>생활·금융 계산기</a>
+    <nav class="cbar-tabs" aria-label="계산기 카테고리">
+      <a href="/calc/">전체</a>
+      <a href="/finance-tools/" class="on">금융</a>
+      <a href="/invest-tools/">투자</a>
+      <a href="/tax-tools/">세금</a>
+      <a href="/career-tools/">직장</a>
+      <a href="/health-calc/">건강</a>
+    </nav>
   </div>
 </header>
-
-  <nav class="calc-nav" aria-label="계산기 바로가기">
-    <div class="wrap calc-nav-inner">
-      <a href="./">전체 계산기</a>
-      <a href="./savings.html">예적금 이자</a>
-      <a href="./salary.html" aria-current="page">실수령액</a>
-      <a href="./refinance.html">대출갈아타기</a>
-      <a href="./severance.html">퇴직금·실업급여</a>
-      <a href="./housing.html">청약·전월세</a>
-    </div>
-  </nav>
-
+<nav class="cpills" aria-label="이 허브의 도구">
+  <div class="cpills-in">
+    <a href="./">전체</a>
+    <a href="./savings.html">예적금 이자</a>
+    <a href="./salary.html" class="on">실수령액</a>
+    <a href="./refinance.html">대환</a>
+    <a href="./severance.html">퇴직금·실업급여</a>
+    <a href="./housing.html">청약·전월세</a>
+  </div>
+</nav>
 <main id="main">
   <div class="wrap">
 
