@@ -154,7 +154,7 @@ button { font-family: inherit; }
 /* ---------- 탭 ---------- */
 .tabs {
   position: sticky;
-  top: 60px;
+  top: 56px;
   z-index: 30;
   background: var(--bg);
   border-bottom: 1px solid var(--line);
